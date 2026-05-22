@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 ## Como usar
 
-1. Abra o Forza Horizon 4
+1. Abra o Forza Horizon 6
 2. Vá até a Casa de Leilões → Buscar Carros
 3. Configure os filtros de busca desejados
 4. Execute o bot:
