@@ -1,72 +1,66 @@
 # FH6 Auction House Bot
 
-Bot automatizado para a Casa de Leilões do Forza Horizon 4, desenvolvido em Python.
+An automated bot for the Forza Horizon 4 Auction House, built in Python.
 
-## Como funciona
+## How it works
 
-O bot monitora pixels específicos da tela para detectar o estado do jogo e simula teclas automaticamente para buscar e comprar carros no leilão.
+The bot monitors specific screen pixels to detect the game state and automatically simulates key presses to search and buy cars at the auction.
 
-**Fluxo:**
-1. Detecta a tela de busca pelo pixel de start
-2. Aperta Enter para abrir a busca
-3. Aperta Enter para confirmar
-4. Verifica se o carro foi encontrado pelo pixel da tela de resultado
-5. Se encontrou → aperta Y, desce, confirma a compra
-6. Se não encontrou → aperta ESC e reinicia
+**Flow:**
+1. Detects the search screen via the start pixel
+2. Presses Enter to open the search
+3. Presses Enter to confirm
+4. Checks if a car was found via the result screen pixel
+5. If found → presses Y, scrolls down, confirms the purchase
+6. If not found → presses ESC and restarts
 
-## Requisitos
+## Requirements
 
 - Python 3.10+
-- Resolução: 1720x1080 (padrão) — veja a seção de calibração para outras resoluções
+- Resolution: 1720x1080 (default) — see the calibration section for other resolutions
 
-## Instalação
+## Installation
 
-**1. Clone o repositório**
+**1. Clone the repository**
 ```bash
-git clone https://github.com/seu-usuario/fh4-auction-bot.git
+git clone https://github.com/your-username/fh4-auction-bot.git
 cd fh4-auction-bot
 ```
 
-**2. Crie um ambiente virtual**
+**2. Create a virtual environment**
 ```bash
 python -m virtualenv venv
 venv\Scripts\activate.bat
 ```
 
-**3. Instale as dependências**
+**3. Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-## Como usar
+## Usage
 
-1. Abra o Forza Horizon 6
-2. Vá até a Casa de Leilões → Buscar Carros
-3. Configure os filtros de busca desejados
-4. Execute o bot:
+1. Open Forza Horizon 6
+2. Go to Auction House → Search Cars
+3. Set up your desired search filters
+4. Run the bot:
 ```bash
 python main.py
 ```
-5. Troque rapidamente para o jogo
+5. Quickly switch back to the game
 
-## Calibração para outras resoluções
+## Calibration for other resolutions
 
-Se sua resolução for diferente de 1720x1080, você precisa ajustar as variáveis no início do `main.py`:
+If your resolution is different from 1720x1080, adjust the variables at the top of `main.py`:
 
 ```python
-PIXEL_START   = (151, 662)   # Pixel da tela de busca
-PIXEL_CAR     = (382, 1015)  # Pixel do resultado
-COR_START     = (4, 4, 5)    # Cor esperada na tela de busca
-COR_CAR_FOUND = (255, 255, 255) # Cor quando carro é encontrado
-TOLERANCIA    = 20           # Variação permitida por canal RGB
+PIXEL_START   = (151, 662)      # Pixel on the search screen
+PIXEL_CAR     = (382, 1015)     # Pixel on the result screen
+COR_START     = (4, 4, 5)       # Expected color on the search screen
+COR_CAR_FOUND = (255, 255, 255) # Color when a car is found
+TOLERANCIA    = 20              # Allowed variation per RGB channel
 ```
 
-Para descobrir os valores corretos para sua resolução, use o script de calibração:
+## Disclaimer
 
-```bash
-python calibrar.py
-```
-
-## Aviso
-
-Este bot é para uso educacional. O uso de bots pode violar os Termos de Serviço do jogo.#
+This bot is for educational purposes only. The use of bots may violate the game's Terms of Service.
