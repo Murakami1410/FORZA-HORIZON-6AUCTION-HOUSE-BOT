@@ -1,4 +1,4 @@
-import time
+import time 
 import mss
 from pynput.keyboard import Key, Controller, Listener
 
