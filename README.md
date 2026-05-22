@@ -1,4 +1,4 @@
-# FH4 Auction House Bot
+# FH6 Auction House Bot
 
 Bot automatizado para a Casa de Leilões do Forza Horizon 4, desenvolvido em Python.
 
