@@ -39,14 +39,14 @@ def press(key, wait=0.3):
 with mss.MSS() as sct:
     while True:
 
-        # Aguarda tela de busca antes de fazer qualquer coisa
+       
         while True:
             if match(sct, *PIXEL_START, COR_START):
                 break
             time.sleep(0.5)
 
-        press(Key.enter, 1)  # abre busca e espera carregar
-        press(Key.enter, 1)  # confirma e espera resultado
+        press(Key.enter, 1)  
+        press(Key.enter, 1)  
 
         if match(sct, *PIXEL_CAR, COR_CAR_FOUND):
             print("Carro encontrado! Comprando...")
@@ -57,7 +57,7 @@ with mss.MSS() as sct:
             time.sleep(6)
             press(Key.enter, 1)
             press(Key.esc,   1)
-            press(Key.esc,   1)  # espera 1s para garantir que voltou à busca
+            press(Key.esc,   1) 
         else:
             print("Sem carro. Voltando...")
-            press(Key.esc, 1.0)  # espera 2s para garantir que voltou à busca
+            press(Key.esc, 1.0)  
